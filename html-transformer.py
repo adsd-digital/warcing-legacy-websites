@@ -155,7 +155,7 @@ class FileConverter(BaseTool):
 
         # TODO: change code so that first line is not added for every call of html-transformer
         if not dry_run:
-            self.write_tld(["endung", "tld", "file", "pfad", "neuer pfad"])
+            self.write_tld(["extension", "tld", "file", "path", "new path"])
 
         try:
             for file_info in self.iter_inputs():
