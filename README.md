@@ -14,3 +14,7 @@ Offline Web Archiv: Properties.xml
 
 files at the moment added to WARC
 
+warcit can be installed from https://pypi.org/project/warcit/
+then the warcit.py file has to be replaced,
+and the html_transformer.py and rules.yaml need to be added
+furthermore the html_transformer has to be added to the path (bin)
