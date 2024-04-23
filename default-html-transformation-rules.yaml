@@ -1,0 +1,23 @@
+output_dir: ./transformations
+
+url_prefix: http://
+
+rules:
+  - &html
+    name: html
+    ext: html
+    mime: text/hmtl
+
+  - &htm
+    name: htm
+    ext: htm
+    mime: text/hmtl
+
+file_types:
+  # HTML Transformation
+  - ext: '.html'
+    transformation_rules:
+      - *html
+  - ext: '.htm'
+    transformation_rules:
+      - *htm
