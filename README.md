@@ -9,11 +9,12 @@ The script has been developed and tested for websites downloaded with
 - Offline Web Archiv (versions from ca. 2008-2018), websites exported from database to folder structure.
 
 The output directory structure of these crawlers has the following form:
-
+```bash
 ├── JOB_NAME
    ├── www.example.org
    ├── www.next-example.com
-   └── another-domain.com     
+   └── another-domain.com
+```
 
 In the downloaded html files any links to domains within the crawl are stored as relative paths, e.g. ../../../www.example.org
 Before adding these files to a WARC container these paths have to be made absolute, else the linking e.g. within pywb and other playback software will not work.
