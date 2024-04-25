@@ -38,7 +38,7 @@ $ python3 warcing-legacy-websites.py path/to/JOB_NAME
 
 The output is written to a folder with the name JOB_NAME in the current working directory.
 
-The script has only been tested on Ubuntu 22.
+The script has only been tested on Ubuntu 22.04.4.
 
 ## TODOs, Bugs and warnings:
 
@@ -51,7 +51,7 @@ But there are still a few bugs and a lot of things that need to be changed:
 
 - 	The relative paths in the html files may only be replaced if followed by a domain. To detect the domain first a regex is employed. The last part of this regex should be the top level domain. This is matched against a list of top level domains.
 	At the moment this list is hard coded, it should be replaced by a reference document. 
-	The list is also far from complete. To check for missing top level domains all extensions found are written to the tld.csv mentioned below (logging). 
+	The list is also far from complete. To check for missing top level domains all extensions found are written to the no-tld-test.csv mentioned below (logging). 
 -	The "../" part of the detected (wrong) relativ file paths is at the moment replaced by "http://". It remains to be tested if a differentiation between http and https is necessary and if so how the information on which protocoll to choose can be detected.
 -	The transformed html files are stored with the timestamp of the moment they are changed. For replay this is not ideal. The method for overwriting the timestamp with the timestamp of the original file is implemented but at the moment commented out.
 	This is due to the fact that in replay the transformed html file is not shown because there is another file with the exact same url and timestamp. 
@@ -68,7 +68,7 @@ But there are still a few bugs and a lot of things that need to be changed:
 
 - 	Ideally the WARC should contain information on how the html files have been transformed during this process.
 -	The output of the software products also offers a few specific files/properties:
-	-	Teleport Pro: After each "href" there is the tag "tpp apps" added, where the original path is stored. 
+	-	Teleport Pro: After each "href" there is the tag "tppabs" added, where the original path is stored. 
 		Potentially for this software there could also be a further check added to test if the new url has been replaced correctly.
 	- 	Offline Explorer Pro: in folders with transformed files there is a proprietary WD3-File, readable with a basic text editor are only only the file names and the timestamp
 		In a newer versions of the Offline Explorer Pro, there is also a added default.htm, that can be used as entry page to the downloaded sites. 
