@@ -2,7 +2,8 @@
 
 WARNING: This is script is not finally tested and still has bugs that need solving (see below and in code).
 
-The script warcing-legacy-folder.py can be used to transform websites that have been downloaded with specific software to a folder structure to the WARC format.
+The script warcing-legacy-folder.py can be used to transform websites that have been downloaded with specific software to a folder structure to the WARC format, by using [warcit](https://github.com/webrecorder/warcit).
+
 The script has been developed and tested for websites downloaded with
 - Teleport Pro (versions from ca. 1999-2004)
 - Offline Explorer Pro (versions from ca. 2004-2011)
@@ -16,19 +17,19 @@ The output directory structure of these crawlers has the following form:
    └── another-domain.com
 ```
 
-In the downloaded html files any links to domains within the crawl are stored as relative paths, e.g. ../../../www.example.org
-Before adding these files to a WARC container these paths have to be made absolute, else the linking e.g. within pywb and other playback software will not work.
+In the downloaded html files any links to domains within the crawl are stored as relative paths, e.g. ../../../www.example.org. 
+Before adding these files to a WARC container these paths have to be made "absolute", else the linking e.g. within pywb and other playback software will not work.
 
-To this purpose the script calls for every subfolder first the html-transformer which has been implemented as a module of warcit, in analogue to the warcit-converter.
-All html files are checked for links that have to be adapted, if changes are made, a new version of the html file is stored and the new path documented in the transformation-result.yaml.
+To this purpose the script calls for every subfolder first the html-transformer which has been implemented as a module of [warcit](https://github.com/webrecorder/warcit), in analogue to the warcit-converter.
+All html files are checked for links that have to be adapted. If changes are made, a new version of the html file is stored and the new path documented in the a transformation-results.yaml.
 
-The script then calls calls for every subfolder warcit while including this trans-results.yaml - in the resulting WARC both the "original" and the transformed html file are stored. 
+The script then calls calls for every subfolder [warcit](https://github.com/webrecorder/warcit) while including this transformation-results.yaml - in the resulting WARC both the "original" and the transformed html file are stored. 
 
 The final output is a WARC file for every folder found on the first level beneath the input folder.
 
 ## RUNNING:
 
-To get the script warcing-legacy-folder.py running, you need to have an adapted version of warcit installed.
+To get the script warcing-legacy-folder.py running, you need to have an adapted version of [warcit](https://github.com/webrecorder/warcit) installed.
 warcit can be installed from https://pypi.org/project/warcit/. For the transformer to work, the original warcit.py file has to be replaced and the html_transformer.py and rules.yaml need to be added. Furthermore the html_transformer has to be added to the path.
 
 You then can call the script, e.g.
@@ -37,7 +38,7 @@ $ python3 warcing-legacy-websites.py path/to/JOB_NAME
 
 The output is written to a folder with the name JOB_NAME in the current working directory.
 
-The script has only been tested on Ubuntu.
+The script has only been tested on Ubuntu 22.
 
 ## TODOs, Bugs and warnings:
 
