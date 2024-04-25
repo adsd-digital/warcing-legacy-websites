@@ -66,14 +66,14 @@ But there are still a few bugs and a lot of things that need to be changed:
 
 ### Documentation:
 
-- 	Ideally the WARC should contain information on how the html files have been transformed during this process.
+- 	Ideally the WARC should contain information on how the html files have been transformed during this process. Potentially the warcinfo might be a good place to insert that information.
 -	The output of the software products also offers a few specific files/properties:
 	-	Teleport Pro: After each "href" there is the tag "tppabs" added, where the original path is stored. 
 		Potentially for this software there could also be a further check added to test if the new url has been replaced correctly.
 	- 	Offline Explorer Pro: in folders with transformed files there is a proprietary WD3-File, readable with a basic text editor are only only the file names and the timestamp
 		In a newer versions of the Offline Explorer Pro, there is also a added default.htm, that can be used as entry page to the downloaded sites. 
 	-	Offline Web Archiv: in the same folders as the domain subfolders there is a Properties.xml, where the configuration of the crawl job is stored.
-	These additional files are at the moment also added to a WARC file - the Properties.xml becomes its own WARC file, the WD3-Files are added to the respective WARC Files. 
+These additional files are at the moment also added to a WARC file - the Properties.xml becomes its own WARC file, the WD3-Files are added to the respective WARC Files. 
 	This way this information is still potentially accessible, but it needs explanation, documentation or potentially should be stored elsewhere.
 
 ### General:
