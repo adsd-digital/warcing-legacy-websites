@@ -68,6 +68,8 @@ for entry in domain_list:
 	website_name_for_job = website_name_for_job.replace(":", "")
 	website_name_for_job = website_name_for_job.replace("/", "")
 	website_name_for_job = website_name_for_job.replace(".", "_")
+	ct = datetime.datetime.now().strftime("%y%m%d%H%M%S")
+	website_name_for_job = website_name_for_job + ct
 	job_name = 'warcs/' + website_name_for_job
 	log = 'log/' + website_name_for_job + '.log'
 	subprocess.run(["warcit-transformer", "--results", transform_results_file, website, source_path])
