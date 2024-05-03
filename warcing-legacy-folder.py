@@ -4,6 +4,7 @@ import sys
 import zipfile
 import subprocess
 import os
+import datetime
 
 # Script for transformation of archived websites crawled with Teleport Pro, Offline Explorer Pro and Offline Web Archiv
 # (exported to folder structure) to WARC format
