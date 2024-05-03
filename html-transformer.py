@@ -207,9 +207,9 @@ class FileConverter(BaseTool):
                         change = True
                         with open(output, 'w', encoding='latin-1') as file:
                             file.write(processed_html)
-                    # TODO: at the moment: for testing purposes: new date - if old date is copied to a file
-                    # that leads to the effect, that the transformed file can't be accessed in pywb
-                    #self.copy_file_timestamps(original, output)
+                        # TODO: at the moment: for testing purposes: new date - if old date is copied to a file
+                        # that leads to the effect, that the transformed file can't be accessed in pywb
+                        #self.copy_file_timestamps(original, output)
 
                     result = {'url': file_info.url,
                               'output': output,
